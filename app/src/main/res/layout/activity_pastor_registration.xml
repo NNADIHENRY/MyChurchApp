@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.henry.ighubchurchapp.PastorRegistration">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tvPastor"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/pastor_detail"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textColor="#051005"
+                android:layout_marginTop="24dp"/>
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border"
+                />
+            <Button
+                android:id="@+id/btnImport_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/import_image"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                style="@style/marginpadd">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvSurname"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/surname"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+
+                    <EditText
+                        android:id="@+id/etSurname"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvFirstname"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/first_name"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+
+                    <EditText
+                        android:id="@+id/etFirstname"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="#000"
+                        style="@style/marginpadd"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvOthername"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/other_name"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+                    <EditText
+                        android:id="@+id/etOthername"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvResidential"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/residential_address"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+                    <EditText
+                        android:id="@+id/etResidential"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number"
+                        android:gravity="center"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:id="@+id/tvBriefDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brief_detail"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="15sp"
+                />
+
+            <EditText
+                android:id="@+id/etBriefDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:layout_marginTop="20dp"
+                android:maxLength="200"
+                android:background="@drawable/design"
+                android:inputType="text"
+                android:textColor="#000" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

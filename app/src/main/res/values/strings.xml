@@ -14,8 +14,47 @@
     <string name="deliverance">DELIVERANCE SERVICE</string>
     <string name="biblestudy">BIBLE STUDY</string>
     <string name="holyghost">HOLY GHOST SERVICE </string>
+
     <string name="church">CHURCH</string>
     <string name="registrationType">SELECT REGISTRATION TYPE</string>
     <string name="pastor">PASTOR</string>
     <string name="member">MEMBER</string>
+
+    <string name="surname">Surname :</string>
+    <string name="first_name">First Name :</string>
+    <string name="other_name">Other Name(s) :</string>
+    <string name="age">Age :</string>
+    <string name="email">Email Address :</string>
+    <string name="phone_number">Phone Number :</string>
+    <string name="date_of_birth">Date Of Birth : </string>
+    <string name="permanent_address">Permanent Address :</string>
+    <string name="state_of_origin">State Of Origin :</string>
+    <string name="lga">L.G.A :</string>
+    <string name="nationality">Nationality :</string>
+    <string name="residential_address">Residential Address :</string>
+    <string name="register">REGISTER</string>
+    <string name="newMember_form">Membership Form</string>
+    <string name="ighub_church">Ighub Church</string>
+    <string name="day1">DD</string>
+    <string name="month">MM</string>
+    <string name="year">YY</string>
+    <string name="import_image">Import Image</string>
+    <string name="submit">SUBMIT</string>
+    <string name="id">ADMIN ID :</string>
+    <string name="admin_details">Admin Details</string>
+    <string-array name="gender">
+        <item name="gender">Select Gender</item>
+        <item name="male">Male</item>
+        <item name="female">Female</item>
+    </string-array>
+    <string-array name="marital_status">
+        <item name="marital_status">Select Marital Status</item>
+        <item name="single">Single</item>
+        <item name="married">Married</item>
+    </string-array>
+
+    <string name="pastor_detail">PASTOR DETAILS</string>
+    <string name="brief_detail">BRIEF DETAILS</string>
+
+
 </resources>
