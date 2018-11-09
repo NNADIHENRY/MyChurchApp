@@ -14,4 +14,8 @@
     <string name="deliverance">DELIVERANCE SERVICE</string>
     <string name="biblestudy">BIBLE STUDY</string>
     <string name="holyghost">HOLY GHOST SERVICE </string>
+    <string name="church">CHURCH</string>
+    <string name="registrationType">SELECT REGISTRATION TYPE</string>
+    <string name="pastor">PASTOR</string>
+    <string name="member">MEMBER</string>
 </resources>
