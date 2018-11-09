@@ -38,7 +38,21 @@ public class HomePage extends AppCompatActivity implements MenuItem.OnMenuItemCl
 
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        String a = menuItem.getTitle().toString();
+                        String select = menuItem.getTitle().toString();
+                        if(select == "Registration"){
+
+                        }
+                        else if(select == "Login"){
+
+                        }
+                        else if(select == "Pay Tithe/Offering"){
+
+                        }
+                        else if(select == "View Pastors"){
+
+                        }
+
+
                         Toast.makeText(getApplicationContext(), "You have clicked " + menuItem.getTitle(), Toast.LENGTH_LONG).show();
                         return true;
                     }
