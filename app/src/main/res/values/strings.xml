@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ighubChurchApp</string>
+    <string name="weeklyact">WEEKLY ACTIVITIES</string>
+    <string name="monday">MONDAY</string>
+    <string name="tuesday">TUESDAY</string>
+    <string name="wednesday">WEDNESDAY</string>
+    <string name="thursday">THURSDAY</string>
+    <string name="friday">FRIDAY</string>
+    <string name="saturday">SATURDAY</string>
+    <string name="sunday">SUNDAY</string>
+    <string name="day">DAY</string>
+    <string name="activity">ACTIVITY</string>
+    <string name="time">TIME</string>
+    <string name="deliverance">DELIVERANCE SERVICE</string>
+    <string name="biblestudy">BIBLE STUDY</string>
+    <string name="holyghost">HOLY GHOST SERVICE </string>
+</resources>

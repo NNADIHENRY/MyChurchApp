@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.henry.ighubchurchapp.HomePage"
+    android:background="@drawable/whiteflower"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/margin"
+            android:background="@drawable/litegreenflower">
+
+            <TableRow style="@style/margin"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/weeklyact"
+                    style="@style/text"
+                    />
+
+            </TableRow>
+            <TableRow
+                style="@style/margin">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/day"
+                    style="@style/headtext"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/activity"
+                    style="@style/headtext"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/time"
+                    style="@style/headtext"
+                    />
+            </TableRow>
+            <TableRow
+                style="@style/margin"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/monday"
+                    style="@style/smalltext"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="DELIVERANCE SERVICE"
+                    style="@style/smalltext" />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="8am"
+                    style="@style/smalltext"/>
+            </TableRow>
+                <TableRow
+                    style="@style/margin">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/wednesday"
+                        style="@style/smalltext"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/biblestudy"
+                        style="@style/smalltext" />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="6am"
+                        style="@style/smalltext"/>
+                </TableRow>
+            <TableRow
+                style="@style/margin">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/sunday"
+                    style="@style/smalltext"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/holyghost"
+                    style="@style/smalltext" />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="9am"
+                    style="@style/smalltext"/>
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>
+
+</ScrollView>
