@@ -1,5 +1,6 @@
 package com.example.henry.ighubchurchapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import java.util.regex.Pattern;
 public class MembersRegistration extends AppCompatActivity {
     private EditText etadminId, etsurname, etfirstname, etothername, etdate, etmonth, etyear,
             etage, etemail, etphone, etnationality, etstate, etlga, etresidential, etpermanent;
+    private TextView tvhomepage;
     private Button btnregister;
 
     private String adminId, surname, firstname, othername, date, month, year, age, email, phone,
@@ -39,9 +41,16 @@ public class MembersRegistration extends AppCompatActivity {
         etlga = findViewById(R.id.etLga);
         etresidential = findViewById(R.id.etResidential);
         etpermanent = findViewById(R.id.etPermanent);
-
-
+        tvhomepage = findViewById(R.id.tvHomePage);
         btnregister = findViewById(R.id.btnRegister);
+
+        tvhomepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MembersRegistration.this,
+                        HomePage.class));
+            }
+        });
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +81,7 @@ public class MembersRegistration extends AppCompatActivity {
 
 
         if(adminId.isEmpty()){
-            etadminId.setError("this field cannot be empty");
+            etadminId.setError("PLease input your admin id");
             return;
         }
 
@@ -100,35 +109,48 @@ public class MembersRegistration extends AppCompatActivity {
             return;
         }
 
-        if(Pattern.matches("[0-9]+", date)){
+        if(!Pattern.matches("[0-9]+", date) || date.length() > 2){
             etdate.setError("Not a valid name");
             if(date.isEmpty()){
-                etdate.setError("this field cannot be empty");
+                etdate.setError("This field cannot be empty");
             }
             return;
         }
 
-        if(Pattern.matches("[0-9]+", month)){
+        if(Pattern.matches("[0-9]+", month) || month.length() > 3){
             etmonth.setError("Not a valid name");
             if(month.isEmpty()){
                 etmonth.setError("this field cannot be empty");
             }
             return;
         }
-        if(year.isEmpty()){
-            etyear.setError("this field cannot be empty");
+
+        if(!Pattern.matches("[0-9]+", year) || year.length() > 4){
+            etyear.setError("Not a valid name");
+            if(year.isEmpty()){
+                etyear.setError("this field cannot be empty");
+            }
             return;
         }
-        if(age.isEmpty()){
-            etage.setError("this field cannot be empty");
+
+        if(!Pattern.matches("[0-9]+", age) || age.length() > 3){
+            etage.setError("Not a valid name");
+            if(age.isEmpty()){
+                etage.setError("This field cannot be empty");
+            }
             return;
         }
+
         if(email.isEmpty()){
-            etemail.setError("this field cannot be empty");
+            etemail.setError("This field cannot be empty");
             return;
         }
-        if(phone.isEmpty()){
-            etphone.setError("this field cannot be empty");
+
+        if(!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {
+            etphone.setError("Please enter a valid phone number");
+            if(phone.isEmpty()){
+                etphone.setError("This field cannot be empty");
+            }
             return;
         }
 
@@ -169,7 +191,7 @@ public class MembersRegistration extends AppCompatActivity {
             if(permanent.isEmpty()){
                 etpermanent.setError("this field cannot be empty");
             }
-            return;
+            //return statement is not required here because the method is void
         }
         else{
             Toast.makeText(this, "Wonderful!, you have just completed your form",

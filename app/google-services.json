@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "905659284519",
+    "firebase_url": "https://ighubchurchapp1.firebaseio.com",
+    "project_id": "ighubchurchapp1",
+    "storage_bucket": "ighubchurchapp1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905659284519:android:e976ce75a88931f0",
+        "android_client_info": {
+          "package_name": "com.example.henry.ighubchurchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905659284519-qtgq2ecqno7h2g0mcrpovs08lmr6l67o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.henry.ighubchurchapp",
+            "certificate_hash": "1c57b8e9320ba38613c10d3bc9ab9c0a1256c198"
+          }
+        },
+        {
+          "client_id": "905659284519-2a5fs75u9ec9rku36em9nl7commo92sq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUEoIrOz5J3qqzZtNgp47hvt6ebXu31zg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905659284519-2a5fs75u9ec9rku36em9nl7commo92sq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

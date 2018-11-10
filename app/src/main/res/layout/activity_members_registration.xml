@@ -13,10 +13,16 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:layout_margin="15dp"
-
+    android:background="@drawable/lovelygreen"
     >
 
     <!--ighub logo should be placed here-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:src="@drawable/logo"
+        android:background="@drawable/colors"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tvMembership"
@@ -25,7 +31,7 @@
         android:text="@string/newMember_form"
         android:textSize="30sp"
         android:layout_gravity="center"
-        android:textColor="#142ad6"
+        android:textColor="#151516"
         android:padding="8dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -399,11 +405,21 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/register"
+        android:background="@drawable/border3"
         android:layout_marginTop="5dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textColor="@android:color/holo_red_light"/>
-
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/home_page"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="#000"
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>
 
