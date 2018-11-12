@@ -22,5 +22,20 @@
             android:title="Pay Tithe/Offering"
             android:visible="true"
             app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btnAbout"
+        android:title="About Us"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btnHelp"
+        android:title="Help"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btnWeeklyActivity"
+        android:title="Weekly Activity"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText" />
 
     </menu>
