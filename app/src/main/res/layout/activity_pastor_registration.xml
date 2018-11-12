@@ -11,14 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         android:layout_margin="10dp"
-        android:background="@drawable/lovelygreen"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/igchurch"/>
 
             <TextView
                 android:id="@+id/tvPastor"
@@ -81,6 +86,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textColor="#000"
+                        android:background="@drawable/border2"
                         style="@style/marginpadd"
                         />
 
@@ -105,6 +111,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textColor="#000"
+                        android:background="@drawable/border2"
                         style="@style/marginpadd"/>
                 </TableRow>
                 <TableRow>
@@ -124,6 +131,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textColor="#000"
+                        android:background="@drawable/border2"
                         style="@style/marginpadd"
                         />
 
@@ -145,6 +153,7 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
+                        android:background="@drawable/border2"
                         android:textColor="#000"
                         style="@style/marginpadd"
                         />
@@ -168,6 +177,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textColor="#000"
+                        android:background="@drawable/border2"
                         style="@style/marginpadd"
                         />
                 </TableRow>
@@ -187,6 +197,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/border2"
                         android:textColor="#000"
                         style="@style/marginpadd"
                         />
@@ -230,7 +241,7 @@
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:text="@string/register"
-            android:background="@drawable/border3"
+            android:background="@drawable/border2"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:gravity="center"

@@ -22,13 +22,13 @@
         android:layout_marginLeft="10dp"
 
         >
-        <!--<TextView-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="80dp"-->
-            <!--android:layout_gravity="left"-->
-            <!--android:background="@drawable/logo"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--/>-->
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/igchurch"
+            android:layout_marginTop="20dp"
+            />
         <TextView
             android:id="@+id/tvAdminDetail"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:text="@string/admin_details"
             android:layout_gravity="center"
             android:textSize="30sp"
-            android:textColor="#ef3928"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
         <ImageView
             android:id="@+id/showImage"
@@ -109,21 +109,25 @@
                 android:id="@+id/etSurname"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:background="@drawable/border2"
                 android:inputType="text"/>
             <EditText
                 android:id="@+id/etFirstname"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:background="@drawable/border2"
                 android:inputType="text"/>
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:background="@drawable/border2"
                 android:inputType="textEmailAddress"/>
             <EditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:background="@drawable/border2"
                 android:inputType="number"/>
 
         </LinearLayout>
@@ -133,7 +137,7 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/submit"
-        android:background="@drawable/border3"
+        android:background="@color/mycolour1"
         android:layout_marginTop="5dp"
         android:layout_gravity="center"
         android:gravity="center"
