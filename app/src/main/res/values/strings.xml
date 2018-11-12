@@ -15,7 +15,19 @@
     <string name="biblestudy">BIBLE STUDY</string>
     <string name="holyghost">HOLY GHOST SERVICE </string>
 
-    //added by chidinma
+    <string name="login">Login</string>
+    <string name="register1">Registration</string>
+    <string name="tithe">Tithe/Offering</string>
+    <string name="weekly">Weekly Activity</string>
+    <string name="help">Help</string>
+    <string name="about">About Us</string>
+    <string name="vpastor">View Pastors</string>
+
+    <string name="church">CHURCH</string>
+    <string name="registrationType">SELECT REGISTRATION TYPE</string>
+    <string name="pastor">PASTOR</string>
+    <string name="member">MEMBER</string>
+
     <string name="surname">Surname :</string>
     <string name="first_name">First Name :</string>
     <string name="other_name">Other Name(s) :</string>

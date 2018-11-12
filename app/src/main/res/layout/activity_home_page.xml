@@ -28,116 +28,187 @@
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/margin"
-            android:background="@drawable/litegreenflower">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TableRow style="@style/margin"
-                android:layout_gravity="center"
-                android:gravity="center"
+            <Button
+                android:id="@+id/show_dropdown_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#059636"
+                android:onClick="showDropDownMenu"
+                android:text="..."
+                android:textColor="#fff" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/homepageborder">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageButton
+                    android:id="@+id/btnRegister"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/register"
+                    android:layout_marginRight="10dp"
+                    android:onClick="showNoteDialog"
+                    />
+                <ImageButton
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnLoin"
+                    android:src="@drawable/login"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 >
                 <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="@string/weeklyact"
-                    style="@style/text"
-                    />
+                    android:text="@string/register"
+                    android:layout_marginRight="10dp"
+                    style="@style/naming"
 
-            </TableRow>
-            <TableRow
-                style="@style/margin">
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/day"
-                    style="@style/headtext"
+
                     />
                 <TextView
-                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="@string/activity"
-                    style="@style/headtext"
-                    />
-                <TextView
                     android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/time"
-                    style="@style/headtext"
-                    />
-            </TableRow>
-            <TableRow
-                style="@style/margin"
+                    android:text="@string/login"
+                    style="@style/naming"
+                    android:src="@drawable/login"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/monday"
-                    style="@style/smalltext"/>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="DELIVERANCE SERVICE"
-                    style="@style/smalltext" />
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="8am"
-                    style="@style/smalltext"/>
-            </TableRow>
-                <TableRow
-                    style="@style/margin">
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:text="@string/wednesday"
-                        style="@style/smalltext"/>
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:text="@string/biblestudy"
-                        style="@style/smalltext" />
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:text="6am"
-                        style="@style/smalltext"/>
-                </TableRow>
-            <TableRow
-                style="@style/margin">
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/sunday"
-                    style="@style/smalltext"/>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/holyghost"
-                    style="@style/smalltext" />
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="9am"
-                    style="@style/smalltext"/>
-            </TableRow>
+                android:layout_marginTop="20dp">
 
-        </TableLayout>
+                <ImageButton
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnPastors"
+                    android:src="@drawable/pastors"
+                    android:layout_marginRight="10dp"
+                    />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnTithe"
+                    android:src="@drawable/tithe"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vpastor"
+                    android:layout_marginRight="10dp"
+                    style="@style/naming"
+
+
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tithe"
+                    style="@style/naming"
+                    android:src="@drawable/login"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnHelp"
+                    android:src="@drawable/help"
+                    android:layout_marginRight="10dp"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnAbout"
+                    android:src="@drawable/about"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/help"
+                    android:layout_marginRight="10dp"
+                    style="@style/naming"
+
+
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about"
+                    style="@style/naming"
+                    android:src="@drawable/login"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <ImageButton
+                    android:id="@+id/btnWeeklyActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/weeklyactivity"
+                    android:onClick="showTabl"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weeklyact"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
 
