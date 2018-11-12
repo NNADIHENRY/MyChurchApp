@@ -17,9 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".MembersRegistration" />
+        <activity android:name=".MembersRegistration"/>
+
         <activity android:name=".PastorRegistration" />
-        <activity android:name=".AdminRegistration"></activity>
+        <activity android:name=".AdminRegistration"/>
     </application>
 
 </manifest>

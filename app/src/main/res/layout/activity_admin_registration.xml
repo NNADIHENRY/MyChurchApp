@@ -10,14 +10,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/lovelygreen"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
+
         >
+        <!--<TextView-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:background="@drawable/logo"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--/>-->
         <TextView
             android:id="@+id/tvAdminDetail"
             android:layout_width="wrap_content"
@@ -62,6 +73,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="@string/surname"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tvFirstname"
@@ -69,6 +81,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="@string/first_name"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tvEmail"
@@ -76,6 +89,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="@string/email"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tvPhone"
@@ -83,6 +97,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="@string/phone_number"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -115,14 +130,25 @@
     </LinearLayout>
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:text="@string/submit"
+        android:background="@drawable/border3"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
-        android:background="@drawable/mystyle"
-        />
+        android:gravity="center"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/tvHomePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/home_page"
+        android:clickable="true"
+        android:gravity="center"
+        android:textColor="#000"
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>
 

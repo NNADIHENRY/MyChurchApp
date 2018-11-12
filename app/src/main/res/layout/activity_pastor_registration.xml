@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp"
+        android:background="@drawable/lovelygreen"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -226,16 +227,24 @@
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:text="@string/register"
-            android:textSize="20sp"
+            android:background="@drawable/border3"
+            android:layout_marginTop="5dp"
             android:layout_gravity="center"
-            android:gravity="center"/>
-
-
-
-
+            android:gravity="center"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/home_page"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
 

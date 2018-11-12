@@ -1,5 +1,6 @@
 package com.example.henry.ighubchurchapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import java.util.regex.Pattern;
 
 public class AdminRegistration extends AppCompatActivity {
     private EditText etsurname, etfirstname, etemail, etphone;
+    private TextView tvhomepage;
     private Button btnsubmit;
 
 
@@ -28,7 +30,16 @@ public class AdminRegistration extends AppCompatActivity {
         etfirstname = findViewById(R.id.etFirstname);
         etemail = findViewById(R.id.etEmail);
         etphone = findViewById(R.id.etPhone);
+        tvhomepage = findViewById(R.id.tvHomePage);
         btnsubmit = findViewById(R.id.btnSubmit);
+
+        tvhomepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminRegistration.this,
+                        HomePage.class));
+            }
+        });
 
 
         btnsubmit.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +79,7 @@ public class AdminRegistration extends AppCompatActivity {
         }
         if(!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {
             etphone.setError("Please enter a valid phone number");
-            return;
+           
         }else{
             Toast.makeText(this,"DETAILS COMPLETE", Toast.LENGTH_LONG).show();
         }
