@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.henry.ighubchurchapp.PastorRegistration">
+    tools:context="com.example.henry.ighubchurchapp.PastorRegistration"
+    android:background="@color/mycolour1">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-
-        android:layout_margin="10dp"
+        android:background="@drawable/design2"
+        android:layout_margin="15dp"
+        android:padding="10dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,7 +25,8 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:src="@drawable/igchurch"/>
+                android:src="@drawable/ighubchurch"
+                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:id="@+id/tvPastor"
@@ -33,9 +36,11 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textSize="24sp"
+                android:textStyle="italic"
                 android:textColor="#051005"
                 android:layout_marginTop="24dp"/>
             <ImageView
+
                 android:id="@+id/imgPicture"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -74,7 +79,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="@string/surname"
-                        android:gravity="center"
                         android:textColor="#000"
                         android:textSize="15sp"
                         style="@style/marginpadd"/>
@@ -99,7 +103,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="@string/first_name"
-                        android:gravity="center"
                         android:textColor="#000"
                         android:textSize="15sp"
                         style="@style/marginpadd"/>
@@ -143,7 +146,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="@string/email"
-                        android:gravity="center"
                         android:textColor="#000"
                         android:textSize="15sp"
                         style="@style/marginpadd"/>
@@ -166,7 +168,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="@string/residential_address"
-                        android:gravity="center"
                         android:textColor="#000"
                         android:textSize="15sp"
                         style="@style/marginpadd"/>
@@ -188,7 +189,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="@string/phone_number"
-                        android:gravity="center"
                         android:textColor="#000"
                         android:textSize="15sp"
                         style="@style/marginpadd"/>
@@ -199,6 +199,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/border2"
                         android:textColor="#000"
+                        android:inputType="number"
                         style="@style/marginpadd"
                         />
                 </TableRow>
@@ -207,33 +208,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="4dp">
-            <TextView
-                android:id="@+id/tvBriefDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/brief_detail"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="15sp"
-                />
-
-            <EditText
-                android:id="@+id/etBriefDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="start"
-                android:layout_marginTop="20dp"
-                android:maxLength="200"
-                android:background="@drawable/design"
-                android:inputType="text"
-                android:textColor="#000" />
-        </LinearLayout>
 
 
         <Button
@@ -241,18 +215,17 @@
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:text="@string/register"
-            android:background="@drawable/border2"
+            android:background="@drawable/button"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="#000"
             android:textStyle="bold"
             android:textSize="20sp"/>
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/home_page"
-            android:clickable="true"
             android:gravity="center"
             android:textColor="#000"
             android:layout_marginTop="8dp"/>

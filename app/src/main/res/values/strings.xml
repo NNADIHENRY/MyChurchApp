@@ -50,7 +50,8 @@
     <string name="submit">SUBMIT</string>
     <string name="id">ADMIN ID :</string>
     <string name="admin_details">Admin Details</string>
-    <string name="home_page">Click her to go to Home Page</string>
+    <string name="home_page">Click here to go to Home Page</string>
+    <string name="briefdetail"></string>
     <string-array name="gender">
         <item name="gender">Select Gender</item>
         <item name="male">Male</item>

@@ -1,6 +1,7 @@
 package com.example.henry.ighubchurchapp;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.regex.Pattern;
 
 public class AdminRegistration extends AppCompatActivity {
     private EditText etsurname, etfirstname, etemail, etphone;
-    private TextView tvhomepage;
-    private Button btnsubmit;
+    private Button btnsubmit, tvhomepage;
+    double id;
 
 
     private String surname, firstname, email, phone;
@@ -24,6 +28,7 @@ public class AdminRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_registration);
+        id = Math.random();
 
         //linking the xml and java
         etsurname = findViewById(R.id.etSurname);
@@ -46,8 +51,20 @@ public class AdminRegistration extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validate();
+
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("AdminRegistration");
+
+                myRef.setValue(surname);
+                myRef.setValue(firstname);
+                myRef.setValue(email);
+                myRef.setValue(phone);
+                myRef.setValue(id);
+
             }
         });
+        Toast.makeText(this, "your admin id isv "+id, Toast.LENGTH_LONG).show();
     }
 
     private void validate() {
