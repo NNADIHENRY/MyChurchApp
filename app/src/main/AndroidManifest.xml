@@ -17,10 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".MembersRegistration"/>
-
+        <activity android:name=".MembersRegistration" />
         <activity android:name=".PastorRegistration" />
-        <activity android:name=".AdminRegistration"/>
+        <activity android:name=".AdminRegistration" />
+        <activity android:name=".PastorPage" />
+        <activity android:name=".LoginPage"></activity>
     </application>
 
 </manifest>
