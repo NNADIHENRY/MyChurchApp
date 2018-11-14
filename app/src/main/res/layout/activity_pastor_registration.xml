@@ -21,12 +21,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ighubchurch"
-                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+                <Button
+                    android:id="@+id/show_dropdown_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#059636"
+                    android:text="..."
+                    android:layout_marginTop="5dp"
+                    android:textColor="#fff"
+                    android:layout_marginEnd="44dp"/>
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ighubchurch"
+                    android:layout_marginTop="5dp"
+                 />
+
+
+        </LinearLayout>
+
 
             <TextView
                 android:id="@+id/tvPastor"
@@ -39,15 +58,7 @@
                 android:textStyle="italic"
                 android:textColor="#051005"
                 android:layout_marginTop="24dp"/>
-            <ImageView
 
-                android:id="@+id/imgPicture"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/border"
-                />
             <Button
                 android:id="@+id/btnImport_image"
                 android:layout_width="wrap_content"
@@ -199,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/border2"
                         android:textColor="#000"
-                        android:inputType="number"
+                        android:inputType="phone"
                         style="@style/marginpadd"
                         />
                 </TableRow>
@@ -228,6 +239,7 @@
             android:text="@string/home_page"
             android:gravity="center"
             android:textColor="#000"
+            android:background="@android:color/transparent"
             android:layout_marginTop="8dp"/>
     </LinearLayout>
 

@@ -60,7 +60,35 @@
     <string name="id">ADMIN ID :</string>
     <string name="admin_details">Admin Details</string>
     <string name="home_page">Click here to go to Home Page</string>
-    <string name="briefdetail"></string>
+    <string name="not_registered">Not registered?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="password">Password</string>
+    <string name="aboutUs">ABOUT US</string>
+    <string name="forgotten">Forgotten Password?</string>
+    <string name="history">OUR HISTORY</string>
+    <string name="history1">This church was established in the year 2018 by Pastor Favour Obiajulu.</string>
+    <string name="believe">OUR BELIEVE</string>
+    <string name="believe1">We believe in Christ Jesus We believe that the entire Scripture,
+        both Old and New Testament are written by the inspiration of the
+        Holy Spirit – II Tim. 3:16-17. All the Christian teachings and the Christian attitude
+        of the Children of God are such as are established in the Holy Bible – II Tim. 3:10-15;
+        II Peter 1:21; John 17:17; Ps. 119:105.
+        We believe that the Bible is the written and revealed Will of God.
+        Man’s position to God, the way to obtain salvation, woe and destruction awaiting
+        sinners that refuse to repent and everlasting joy that is kept for the born again souls.
+        All the Bible teachings are holy, what the Bible reveals as the will of God are such that
+        we should accept, and whatever God writes in the Bible and His Law are to remain unchangeable;
+        for the Heavens and Earth may pass away but the Word of God stands forever. Deut. 4:22;
+        Rev. 22:18, 19; Matt. 24:34-38.</string>
+    <string name="missionAndVision">MISSION AND VISION</string>
+    <string name="mission">To make heaven.
+        To take as many people with us.
+        To accomplish holiness will be our lifestyle.
+        We will pursue these objectives until every Nation in the world is reached for
+        the Lord Jesus Christ</string>
+    <string name="contact">CONTACT US: 08139264713, 07067464298</string>
+    <string name="emailH">EMAIL: oguerichidinmab@gmail.com</string>
+    <string name="location">OUR ADDRESS: OCHIRIOZUO HOUSE 62, Asa road by Ehi road, Aba,Abia state.</string>
     <string-array name="gender">
         <item name="gender">Select Gender</item>
         <item name="male">Male</item>
