@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.henry.ighubchurchapp">
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
-    <!--<uses-permission android:name="android.permission.CAMERA" />-->
-    <uses-feature android:name="android.hardware.camera" android:required= "true" />
-    <uses-permission android:name ="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,12 +25,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage" />
-        <activity android:name=".MembersRegistration"/>
-
+        <activity android:name=".MembersRegistration" />
         <activity android:name=".PastorRegistration" />
-        <activity android:name=".AdminRegistration"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".PastorRegistration$MainActivity$ImageDisplayActivity" />
+        <activity android:name=".AdminRegistration" />
+        <activity android:name=".MemberLoginPage" />
+        <activity android:name=".PastorLoginPage" />
     </application>
 
 </manifest>

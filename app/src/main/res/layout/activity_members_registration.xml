@@ -16,10 +16,7 @@
     android:padding="10dp"
     android:layout_margin="15dp"
     android:background="@drawable/design2"
-
     >
-
-    <!--ighub logo should be placed here-->
     <ImageView
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -167,7 +164,7 @@
             android:layout_height="30dp"
             android:textColor="#000"
             android:hint="@string/day1"
-            android:inputType="number"
+            android:inputType="datetime"
             android:maxLength="2"
             android:gravity="center"
             android:textColorHint="#000"
@@ -214,14 +211,14 @@
             android:layout_height="wrap_content"
             android:text="@string/age"
             android:textColor="#000"
-            android:inputType="number"
-            android:maxLength="3"
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/etAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000"
+            android:inputType="number"
+            android:maxLength="3"
             android:textSize="20sp"
             />
     </LinearLayout>
@@ -267,7 +264,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000"
-            android:inputType="number"
+            android:inputType="phone"
             android:textSize="20sp"
             />
     </LinearLayout>
@@ -434,6 +431,7 @@
         android:layout_height="match_parent"
         android:text="@string/home_page"
         android:gravity="center"
+        android:background="@android:color/transparent"
         android:textColor="#000"
         android:layout_marginTop="8dp"/>
 
