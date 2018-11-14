@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MemberLoginPage extends AppCompatActivity {
     private EditText etEmail, etPassword;
-    private Button btnSubmit, btnSignUp;
+    private Button btnSubmit, btnSignUp, btnForgotten;
 
     private String email, password;
 
@@ -23,12 +23,13 @@ public class MemberLoginPage extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnSignUp = findViewById(R.id.btnSignUp);
+        btnForgotten = findViewById(R.id.btnForgotten);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnForgotten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate();
+                startActivity(new Intent(MemberLoginPage.this, MainActivity.class));
             }
         });
 
@@ -37,6 +38,13 @@ public class MemberLoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(new Intent(MemberLoginPage.this,
                         MembersRegistration.class) ));
+            }
+        });
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate();
             }
         });
 
@@ -55,6 +63,7 @@ public class MemberLoginPage extends AppCompatActivity {
             etPassword.setError("Incorrect Password");
         } else{
             Toast.makeText(this, "Welcome to your page", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(MemberLoginPage.this, ProfileActivity.class));
         }
     }
 }
