@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,13 +15,13 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="72dp"
         android:paddingTop="20dp"
         android:src="@drawable/igchurch" />
 
     <EditText
-        android:id="@+id/et_gmail"
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -30,39 +30,54 @@
         android:layout_marginTop="88dp"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:padding="5dp"
-        android:paddingTop="15dp"
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
+        android:padding="10dp"
+        android:background="@drawable/logintext"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:layout_margin="20dp"/>
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edtpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:padding="5dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingStart="5dp"
+        android:padding="10dp"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:hint="@string/password"
-        android:layout_below="@id/et_gmail"
         android:textAllCaps="true"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/logintext"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="0dp"/>
 
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/ighubchurch"
-        android:layout_below="@+id/password"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="49dp"
-        android:text="@string/click"
+        android:layout_gravity="center"
+        android:text="@string/login"
+        android:background="@drawable/button"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:background=""/>
-
-</RelativeLayout>
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="not registered?"/>
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign up"/>
+        <Button
+            android:id="@+id/btnForgotten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgotten Password"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+</LinearLayout>

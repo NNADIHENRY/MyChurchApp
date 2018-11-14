@@ -28,6 +28,9 @@
     <string name="vpastor">View Pastors</string>
     <string name="click">CLICK HERE</string>
     <string name="password">Password</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
 
     <string name="church">CHURCH</string>
     <string name="registrationType">SELECT REGISTRATION TYPE</string>
@@ -56,7 +59,8 @@
     <string name="submit">SUBMIT</string>
     <string name="id">ADMIN ID :</string>
     <string name="admin_details">Admin Details</string>
-    <string name="home_page">Click her to go to Home Page</string>
+    <string name="home_page">Click here to go to Home Page</string>
+    <string name="briefdetail"></string>
     <string-array name="gender">
         <item name="gender">Select Gender</item>
         <item name="male">Male</item>

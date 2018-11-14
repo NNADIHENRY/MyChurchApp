@@ -72,7 +72,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="60dp"
-                    android:id="@+id/btnLoin"
+                    android:id="@+id/btnLogin"
                     android:src="@drawable/login"/>
             </LinearLayout>
             <LinearLayout
@@ -198,11 +198,19 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                >
 
                 <ImageButton
                     android:id="@+id/btnWeeklyActivity"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/weeklyactivity"
+                    android:onClick="showTabl"/>
+                <ImageButton
+                    android:id="@+id/btnVideoStreeming"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:src="@drawable/weeklyactivity"
                     android:onClick="showTabl"/>
