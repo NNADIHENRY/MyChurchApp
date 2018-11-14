@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.henry.ighubchurchapp.LoginPage"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/ighubchurch"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="72dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/igchurch" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/ighubchurch"
+        android:layout_marginEnd="11dp"
+        android:layout_marginTop="88dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:background="@drawable/logintext"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"/>
+    <EditText
+        android:id="@+id/edtpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:hint="@string/password"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="@drawable/logintext"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="0dp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/login"
+        android:background="@drawable/button"
+        android:textSize="16sp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="not registered?"/>
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign up"/>
+        <Button
+            android:id="@+id/btnForgotten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgotten Password"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+</LinearLayout>

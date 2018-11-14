@@ -9,27 +9,29 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/whiteflower">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     tools:context="com.example.henry.ighubchurchapp.HomePage"
-    android:background="@drawable/whiteflower"
     android:gravity="center">
 
     <ImageView
         android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo" />
+        android:src="@drawable/igchurch" />
 
 
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/white">
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -45,7 +47,7 @@
                 android:textColor="#fff" />
         </LinearLayout>
         <LinearLayout
-            android:layout_width="200sp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="20dp"
@@ -60,7 +62,7 @@
                     android:id="@+id/btnRegister"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:src="@drawable/register"
                     android:layout_marginRight="10dp"
                     android:onClick="showNoteDialog"
@@ -69,8 +71,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/btnLoin"
+                    android:layout_height="60dp"
+                    android:id="@+id/btnLogin"
                     android:src="@drawable/login"/>
             </LinearLayout>
             <LinearLayout
@@ -82,6 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/register"
+                    android:gravity="center"
                     android:layout_marginRight="10dp"
                     style="@style/naming"
 
@@ -93,6 +96,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="@string/login"
+                    android:gravity="center"
                     style="@style/naming"
                     android:src="@drawable/login"/>
             </LinearLayout>
@@ -104,7 +108,7 @@
                 <ImageButton
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:id="@+id/btnPastors"
                     android:src="@drawable/pastors"
                     android:layout_marginRight="10dp"
@@ -112,7 +116,7 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:id="@+id/btnTithe"
                     android:src="@drawable/tithe"
                     android:layout_marginLeft="10dp"
@@ -120,13 +124,15 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/vpastor"
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_marginRight="10dp"
                     style="@style/naming"
 
@@ -138,6 +144,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="@string/tithe"
+                    android:gravity="center"
                     style="@style/naming"
                     android:src="@drawable/login"/>
 
@@ -149,20 +156,20 @@
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:id="@+id/btnHelp"
                     android:src="@drawable/help"
                     android:layout_marginRight="10dp"/>
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:id="@+id/btnAbout"
                     android:src="@drawable/about"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -171,6 +178,7 @@
                     android:gravity="center"
                     android:layout_height="wrap_content"
                     android:text="@string/help"
+                    android:layout_gravity="center"
                     android:layout_marginRight="10dp"
                     style="@style/naming"
 
@@ -182,6 +190,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="@string/about"
+                    android:gravity="center"
                     style="@style/naming"
                     android:src="@drawable/login"/>
 
@@ -189,11 +198,19 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                >
 
                 <ImageButton
                     android:id="@+id/btnWeeklyActivity"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/weeklyactivity"
+                    android:onClick="showTabl"/>
+                <ImageButton
+                    android:id="@+id/btnVideoStreeming"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:src="@drawable/weeklyactivity"
                     android:onClick="showTabl"/>
@@ -204,7 +221,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/weeklyact"/>
+                    android:text="@string/weeklyact"
+                    />
             </LinearLayout>
 
         </LinearLayout>

@@ -22,17 +22,18 @@ import android.widget.Toast;
 public class HomePage extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
 
     Button showMenu;
-    ImageButton login, register, pastor, tithe, about, help, weeklyactivity;
+    ImageButton login, register, pastor, tithe, about, help, weeklyactivity, video;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         TableLayout tv =  this.findViewById(R.id.table);
        // Set focus to the textview
-        login = findViewById(R.id.btnLoin);
+        login = findViewById(R.id.btnLogin);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, LoginPage.class));
 
             }
         });
@@ -50,6 +51,13 @@ public class HomePage extends AppCompatActivity implements MenuItem.OnMenuItemCl
             @Override
             public void onClick(View v) {
                 weeklyActivity();
+            }
+        });
+        video = findViewById(R.id.btnVideoStreeming);
+        video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, VideoStreeming.class));
             }
         });
         showMenu = findViewById(R.id.show_dropdown_menu);

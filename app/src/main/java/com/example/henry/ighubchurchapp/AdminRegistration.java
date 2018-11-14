@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.regex.Pattern;
 
@@ -27,6 +28,8 @@ public class AdminRegistration extends AppCompatActivity {
     double id;
 
     Button showMenu;
+
+
     private String surname, firstname, email, phone;
 
     @Override

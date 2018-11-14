@@ -14,6 +14,10 @@
     <string name="deliverance">DELIVERANCE SERVICE</string>
     <string name="biblestudy">BIBLE STUDY</string>
     <string name="holyghost">HOLY GHOST SERVICE </string>
+    <string name="pastorik">Pastor IK</string>
+    <string name="pastorcaleb">Pastor Caleb</string>
+    <string name="pastorken">Pastor Ken</string>
+    <string name="pastorjosh">Pastor Josh</string>
 
     <string name="login">Login</string>
     <string name="register1">Registration</string>
@@ -22,6 +26,11 @@
     <string name="help">Help</string>
     <string name="about">About Us</string>
     <string name="vpastor">View Pastors</string>
+    <string name="click">CLICK HERE</string>
+    <string name="password">Password</string>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
 
     <string name="church">CHURCH</string>
     <string name="registrationType">SELECT REGISTRATION TYPE</string>
@@ -53,7 +62,6 @@
     <string name="home_page">Click here to go to Home Page</string>
     <string name="not_registered">Not registered?</string>
     <string name="sign_up">SIGN UP</string>
-    <string name="password">Password</string>
     <string name="aboutUs">ABOUT US</string>
     <string name="forgotten">Forgotten Password?</string>
     <string name="history">OUR HISTORY</string>
