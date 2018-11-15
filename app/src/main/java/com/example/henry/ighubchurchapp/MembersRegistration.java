@@ -31,13 +31,15 @@ import java.util.regex.Pattern;
 
 public class MembersRegistration extends AppCompatActivity {
     private EditText etadminId, etsurname, etfirstname, etothername, etdate, etmonth, etyear,
-            etage, etemail, etphone, etnationality, etstate, etlga, etresidential, etpermanent;
+            etage, etemail, etpassword, etphone, etnationality, etstate, etlga, etresidential,
+            etpermanent;
     private Button btnregister, tvhomepage;
     Button showMenu;
     ImageButton login, register, pastor, tithe, about, help, weeklyactivity;
 
 
-    private String adminId, surname, firstname, othername, date, month, year, age, email, phone,
+    private String adminId, surname, firstname, othername, date, month, year, age, email, password,
+            phone,
             nationality, state, lga, residential, permanent;
 
 
@@ -152,6 +154,7 @@ public class MembersRegistration extends AppCompatActivity {
         etyear = findViewById(R.id.etYear);
         etage = findViewById(R.id.etAge);
         etemail = findViewById(R.id.etEmail);
+        etpassword = findViewById(R.id.etPassword);
         etphone = findViewById(R.id.etPhone);
         etnationality = findViewById(R.id.etNationality);
         etstate = findViewById(R.id.etState);
@@ -170,6 +173,7 @@ public class MembersRegistration extends AppCompatActivity {
         year = etyear.getText().toString().trim();
         age = etage.getText().toString().trim();
         email = etemail.getText().toString().trim();
+        password = etpassword.getText().toString().trim();
         phone = etphone.getText().toString().trim();
         nationality = etnationality.getText().toString().trim();
         state = etstate.getText().toString().trim();
@@ -241,6 +245,10 @@ public class MembersRegistration extends AppCompatActivity {
 
         if(email.isEmpty()){
             etemail.setError("This field cannot be empty");
+            return;
+        }
+        if(password.isEmpty() || password.length() < 6){
+            etpassword.setError("Please input your password");
             return;
         }
 

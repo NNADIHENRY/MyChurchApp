@@ -23,14 +23,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Pattern;
 
 public class AdminRegistration extends AppCompatActivity {
-    private EditText etsurname, etfirstname, etemail, etphone;
+    private EditText etsurname, etfirstname, etemail, etpassword, etphone;
     private Button btnsubmit, tvhomepage;
     double id;
 
     Button showMenu;
 
 
-    private String surname, firstname, email, phone;
+    private String surname, firstname, email, password, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class AdminRegistration extends AppCompatActivity {
         etsurname = findViewById(R.id.etSurname);
         etfirstname = findViewById(R.id.etFirstname);
         etemail = findViewById(R.id.etEmail);
+        etpassword = findViewById(R.id.etPassword);
         etphone = findViewById(R.id.etPhone);
         tvhomepage = findViewById(R.id.tvHomePage);
         btnsubmit = findViewById(R.id.btnSubmit);
@@ -130,7 +131,9 @@ public class AdminRegistration extends AppCompatActivity {
         surname = etsurname.getText().toString().trim();
         firstname = etfirstname.getText().toString().trim();
         email = etemail.getText().toString().trim();
+        password = etpassword.getText().toString().trim();
         phone = etphone.getText().toString().trim();
+
 
 
         if(Pattern.matches("[0-9]+", surname)){
@@ -150,6 +153,10 @@ public class AdminRegistration extends AppCompatActivity {
         }
         if(email.isEmpty()){
             etemail.setError("Please input a valid email address");
+            return;
+        }
+        if(password.isEmpty() || password.length() < 6){
+            etpassword.setError("Please input your password");
             return;
         }
         if(!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {

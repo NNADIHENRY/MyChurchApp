@@ -164,6 +164,28 @@
                 </TableRow>
                 <TableRow>
                     <TextView
+                        android:id="@+id/tvPassword"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/password"
+                        android:textColor="#000"
+                        android:textSize="15sp"
+                        style="@style/marginpadd"/>
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:background="@drawable/border2"
+                        android:textColor="#000"
+                        style="@style/marginpadd"
+                        />
+
+                </TableRow>
+                <TableRow>
+                    <TextView
                         android:id="@+id/tvResidential"
                         android:layout_width="0dp"
                         android:layout_weight="1"

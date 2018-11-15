@@ -42,7 +42,8 @@ import java.util.regex.Pattern;
 
 
         //i declare an instance of the xml id
-        private EditText etsurname, etfirstname, etothername, etemail, etresidential, etphone;
+        private EditText etsurname, etfirstname, etothername, etemail, etpassword,
+                etresidential, etphone;
         private Button btnregister, tvhomepage;
         private int CAMERA_PERMISSION_CODE = 24;
         private static final int CAMERA_REQUEST_CODE = 1;
@@ -53,7 +54,7 @@ import java.util.regex.Pattern;
         Button showMenu;
 
         //i created a string for the xml
-        private String surname, firstname, othername, email, residential, phone;
+        private String surname, firstname, othername, email, password, residential, phone;
 
 
         @Override
@@ -156,6 +157,7 @@ import java.util.regex.Pattern;
             etfirstname = findViewById(R.id.etFirstname);
             etothername = findViewById(R.id.etOthername);
             etemail = findViewById(R.id.etEmail);
+            etpassword = findViewById(R.id.etPassword);
             etresidential = findViewById(R.id.etResidential);
             etphone = findViewById(R.id.etPhone);
         }
@@ -167,6 +169,7 @@ import java.util.regex.Pattern;
             firstname = etfirstname.getText().toString().trim();
             othername = etothername.getText().toString().trim();
             email = etemail.getText().toString().trim();
+            password = etpassword.getText().toString().trim();
             residential = etresidential.getText().toString().trim();
             phone = etphone.getText().toString().trim();
 
@@ -198,6 +201,10 @@ import java.util.regex.Pattern;
 
             if (email.isEmpty()) {
                 etemail.setError("Input your email address, please");
+                return false;
+            }
+            if(password.isEmpty() || password.length() < 6){
+                etpassword.setError("Please input your password");
                 return false;
             }
 
