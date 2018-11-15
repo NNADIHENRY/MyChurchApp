@@ -9,7 +9,9 @@
         android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/registrationType"/>
+        android:text="WHO ARE YOU"
+        android:textColor="@color/blue"
+        android:textStyle="bold"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,6 +26,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/member"/>
+        <RadioButton
+            android:id="@+id/btnAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin"/>
     </RadioGroup>
 
 </LinearLayout>

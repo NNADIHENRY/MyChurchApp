@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.henry.ighubchurchapp.PastorPage"
-    android:background="@color/mycolour2">
+    android:background="@color/mycolour1">
 
     <LinearLayout
         android:layout_width="match_parent"

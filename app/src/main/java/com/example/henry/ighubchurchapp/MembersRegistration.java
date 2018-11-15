@@ -18,8 +18,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -40,11 +44,16 @@ public class MembersRegistration extends AppCompatActivity {
     private String adminId, surname, firstname, othername, date, month, year, age, email, phone,
             nationality, state, lga, residential, permanent;
 
+    public FirebaseAuth firebaseAuth;
+    public DatabaseReference databaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members_registration);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
 
@@ -57,27 +66,22 @@ public class MembersRegistration extends AppCompatActivity {
             public void onClick(View v) {
                 assign();
                 validate();
-
-
-                    // Write a message to the database
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("MemberRegistration");
-
-                myRef.setValue(adminId);
-                myRef.setValue(surname);
-                myRef.setValue(firstname);
-                myRef.setValue(othername);
-                myRef.setValue(date);
-                myRef.setValue(month);
-                myRef.setValue(year);
-                myRef.setValue(age);
-                myRef.setValue(email);
-                myRef.setValue(phone);
-                myRef.setValue(nationality);
-                myRef.setValue(state);
-                myRef.setValue(lga);
-                myRef.setValue(residential);
-                myRef.setValue(permanent);
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(MembersRegistration.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText(MembersRegistration.this,
+                                        "createUserWithEmail:onComplete" + task.isSuccessful(), Toast.LENGTH_LONG).show();
+                                if(!task.isSuccessful()){
+                                   Toast.makeText(MembersRegistration.this,
+                                           "Authentication faild." + task.getException(), Toast.LENGTH_SHORT ).show();
+                                }else{
+                                    Intent intent = new Intent(MembersRegistration.this, MemberLoginPage.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+                        });
 
 
             }

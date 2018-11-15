@@ -25,7 +25,7 @@ public class LoginPage extends AppCompatActivity {
         password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this, MainActivity.class));
+                startActivity(new Intent(LoginPage.this, ProfileActivity.class));
             }
         });
 
