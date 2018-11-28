@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -35,13 +36,15 @@ import java.util.regex.Pattern;
 
 public class MembersRegistration extends AppCompatActivity {
     private EditText etadminId, etsurname, etfirstname, etothername, etdate, etmonth, etyear,
-            etage, etemail, etphone, etnationality, etstate, etlga, etresidential, etpermanent;
+            etage, etemail, etpassword, etphone, etnationality, etstate, etlga, etresidential,
+            etpermanent;
     private Button btnregister, tvhomepage;
     Button showMenu;
     ImageButton login, register, pastor, tithe, about, help, weeklyactivity;
 
 
-    private String adminId, surname, firstname, othername, date, month, year, age, email, phone,
+    private String adminId, surname, firstname, othername, date, month, year, age, email, password,
+            phone,
             nationality, state, lga, residential, permanent;
 
     public FirebaseAuth firebaseAuth;
@@ -66,22 +69,6 @@ public class MembersRegistration extends AppCompatActivity {
             public void onClick(View v) {
                 assign();
                 validate();
-                firebaseAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(MembersRegistration.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(MembersRegistration.this,
-                                        "createUserWithEmail:onComplete" + task.isSuccessful(), Toast.LENGTH_LONG).show();
-                                if(!task.isSuccessful()){
-                                   Toast.makeText(MembersRegistration.this,
-                                           "Authentication faild." + task.getException(), Toast.LENGTH_SHORT ).show();
-                                }else{
-                                    Intent intent = new Intent(MembersRegistration.this, MemberLoginPage.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                        });
 
 
             }
@@ -156,6 +143,7 @@ public class MembersRegistration extends AppCompatActivity {
         etyear = findViewById(R.id.etYear);
         etage = findViewById(R.id.etAge);
         etemail = findViewById(R.id.etEmail);
+        etpassword = findViewById(R.id.etPassword);
         etphone = findViewById(R.id.etPhone);
         etnationality = findViewById(R.id.etNationality);
         etstate = findViewById(R.id.etState);
@@ -174,6 +162,7 @@ public class MembersRegistration extends AppCompatActivity {
         year = etyear.getText().toString().trim();
         age = etage.getText().toString().trim();
         email = etemail.getText().toString().trim();
+        password = etpassword.getText().toString().trim();
         phone = etphone.getText().toString().trim();
         nationality = etnationality.getText().toString().trim();
         state = etstate.getText().toString().trim();
@@ -247,6 +236,10 @@ public class MembersRegistration extends AppCompatActivity {
             etemail.setError("This field cannot be empty");
             return;
         }
+        if(password.isEmpty() || password.length() < 6){
+            etpassword.setError("Please input your password");
+            return;
+        }
 
         if(!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {
             etphone.setError("Please enter a valid phone number");
@@ -296,8 +289,42 @@ public class MembersRegistration extends AppCompatActivity {
             //return statement is not required here because the method is void
         }
         else{
-            Toast.makeText(this, "Wonderful!, you have just completed your form",
-                    Toast.LENGTH_SHORT).show();
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(MembersRegistration.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Toast.makeText(MembersRegistration.this,
+                                    "createUserWithEmail:onComplete" + task.isSuccessful(), Toast.LENGTH_LONG).show();
+                            if(!task.isSuccessful()){
+                                Toast.makeText(MembersRegistration.this,
+                                        "Authentication faild." + task.getException(), Toast.LENGTH_SHORT ).show();
+                            }else{
+                                FirebaseDatabase database =  FirebaseDatabase.getInstance();
+                                DatabaseReference mRef =  database.getReference().child("Users").push();
+                                FirebaseUser user =  firebaseAuth.getCurrentUser();
+                                String userId = user.getUid();
+                                mRef.child(firstname).child("sur-name").setValue(surname);
+                                mRef.child(firstname).child("first name").setValue(firstname);
+                                mRef.child(firstname).child("other name").setValue(othername);
+                                mRef.child(firstname).child("date").setValue(date);
+                                mRef.child(firstname).child("month").setValue(month);
+                                mRef.child(firstname).child("year").setValue(year);
+                                mRef.child(firstname).child("age").setValue(age);
+                                mRef.child(firstname).child("email").setValue(email);
+                                mRef.child(firstname).child("password").setValue(password);
+                                mRef.child(firstname).child("phone").setValue(phone);
+                                mRef.child(firstname).child("surname").setValue(nationality);
+                                mRef.child(firstname).child("firstname").setValue(state);
+                                mRef.child(firstname).child("surname").setValue(lga);
+                                mRef.child(firstname).child("firstname").setValue(residential);
+                                mRef.child(firstname).child("surname").setValue(permanent);
+                                mRef.child(firstname).child("userId").setValue(userId);
+                                Intent intent = new Intent(MembersRegistration.this, MemberLoginPage.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    });
         }
     }
     private void weeklyActivity() {

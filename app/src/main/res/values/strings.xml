@@ -35,6 +35,7 @@
     <string name="registrationType">SELECT REGISTRATION TYPE</string>
     <string name="pastor">PASTOR</string>
     <string name="member">MEMBER</string>
+    <string name="menu_delete">Delete Item</string>
 
     <string name="surname">Surname :</string>
     <string name="first_name">First Name :</string>
@@ -61,7 +62,6 @@
     <string name="home_page">Click here to go to Home Page</string>
     <string name="not_registered">Not registered?</string>
     <string name="sign_up">SIGN UP</string>
-    <string name="password">Password</string>
     <string name="aboutUs">ABOUT US</string>
     <string name="forgotten">Forgotten Password?</string>
     <string name="history">OUR HISTORY</string>

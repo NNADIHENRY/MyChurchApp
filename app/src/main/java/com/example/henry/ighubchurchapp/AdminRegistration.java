@@ -2,6 +2,7 @@ package com.example.henry.ighubchurchapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 //import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,28 +29,33 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Pattern;
 
 public class AdminRegistration extends AppCompatActivity {
-    private EditText etsurname, etfirstname, etemail, etphone;
+    private EditText etsurname, etfirstname, etemail, etpassword, etphone;
     private Button btnsubmit, tvhomepage;
     double id;
 
-
-
-
-
-
     Button showMenu;
-    private String surname, firstname, email, phone;
+
+    private FirebaseAuth firebaseAuth;
+
+
+
+    private String surname, firstname, email, password, phone;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_registration);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
         id = Math.random();
 
         //linking the xml and java
         etsurname = findViewById(R.id.etSurname);
         etfirstname = findViewById(R.id.etFirstname);
         etemail = findViewById(R.id.etEmail);
+        etpassword = findViewById(R.id.etPassword);
         etphone = findViewById(R.id.etPhone);
         tvhomepage = findViewById(R.id.tvHomePage);
         btnsubmit = findViewById(R.id.btnSubmit);
@@ -61,17 +72,9 @@ public class AdminRegistration extends AppCompatActivity {
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 validate();
 
-                // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("AdminRegistration");
-
-                myRef.setValue(surname);
-                myRef.setValue(firstname);
-                myRef.setValue(email);
-                myRef.setValue(phone);
-                myRef.setValue(id);
 
             }
         });
@@ -133,7 +136,9 @@ public class AdminRegistration extends AppCompatActivity {
         surname = etsurname.getText().toString().trim();
         firstname = etfirstname.getText().toString().trim();
         email = etemail.getText().toString().trim();
+        password = etpassword.getText().toString().trim();
         phone = etphone.getText().toString().trim();
+
 
 
         if(Pattern.matches("[0-9]+", surname)){
@@ -155,11 +160,42 @@ public class AdminRegistration extends AppCompatActivity {
             etemail.setError("Please input a valid email address");
             return;
         }
+        if(password.isEmpty() || password.length() < 6){
+            etpassword.setError("Please input your password");
+            return;
+        }
         if(!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {
             etphone.setError("Please enter a valid phone number");
            
         }else{
-            Toast.makeText(this,"DETAILS COMPLETE", Toast.LENGTH_LONG).show();
+
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(AdminRegistration.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Toast.makeText(AdminRegistration.this,
+                                    "createUserWithEmail:onComplete" + task.isSuccessful(), Toast.LENGTH_LONG).show();
+                            if(!task.isSuccessful()){
+                                Toast.makeText(AdminRegistration.this,
+                                        "Authentication faild." + task.getException(), Toast.LENGTH_SHORT ).show();
+                            }else{
+                                FirebaseDatabase database =  FirebaseDatabase.getInstance();
+                                DatabaseReference mRef =  database.getReference().child("Users").push();
+                                FirebaseUser user =  firebaseAuth.getCurrentUser();
+                                String userId = user.getUid();
+                                mRef.child(firstname).child("sur-name").setValue(surname);
+                                mRef.child(firstname).child("first name").setValue(firstname);
+                                mRef.child(firstname).child("email").setValue(email);
+                                mRef.child(firstname).child("password").setValue(password);
+                                mRef.child(firstname).child("phone").setValue(phone);
+                                mRef.child(firstname).child("userId").setValue(userId);
+                                Intent intent = new Intent(AdminRegistration.this, LoginPage.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    });
+
         }
 
     }

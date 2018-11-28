@@ -3,16 +3,15 @@
     package="com.example.henry.ighubchurchapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-=======
+
     <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
     <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
->>>>>>> 77d1ae67715a1a45578e30fca5cdeac0db11a624
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,6 +30,8 @@
         <activity android:name=".MembersRegistration" />
         <activity android:name=".PastorRegistration" />
         <activity android:name=".AdminRegistration" />
+        <activity android:name=".MemberLoginPage" />
+        <activity android:name=".PastorLoginPage" />
 
         <activity android:name=".PastorPage" />
         <activity android:name=".LoginPage" />
@@ -38,8 +39,10 @@
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".VideoStreeming"/>
-        <activity android:name=".MemberLoginPage" />
-        <activity android:name=".PastorLoginPage" />
+        <activity android:name=".notespad.NoteEdit" />
+        <activity android:name=".notespad.NotesPad" />
+        <activity android:name=".video.VideoAppMainActivity"/>
+
     </application>
 
 </manifest>

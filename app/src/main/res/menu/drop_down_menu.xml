@@ -37,5 +37,10 @@
         android:title="Weekly Activity"
         android:visible="true"
         app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/btnnote"
+        android:title="Take Note"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText" />
 
     </menu>

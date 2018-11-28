@@ -10,6 +10,7 @@ import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,9 +46,12 @@ import java.util.regex.Pattern;
 
     public class PastorRegistration extends AppCompatActivity {
 
+        private FirebaseAuth firebaseAuth;
+
 
         //i declare an instance of the xml id
-        private EditText etsurname, etfirstname, etothername, etemail, etresidential, etphone;
+        private EditText etsurname, etfirstname, etothername, etemail, etpassword,
+                etresidential, etphone;
         private Button btnregister, tvhomepage;
         private int CAMERA_PERMISSION_CODE = 24;
         private static final int CAMERA_REQUEST_CODE = 1;
@@ -53,7 +62,7 @@ import java.util.regex.Pattern;
         Button showMenu;
 
         //i created a string for the xml
-        private String surname, firstname, othername, email, residential, phone;
+        private String surname, firstname, othername, email, password, residential, phone;
 
 
         @Override
@@ -78,26 +87,15 @@ import java.util.regex.Pattern;
             btnregister.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    firebaseAuth = FirebaseAuth.getInstance();
+
                     assign();
                     validate();
 
-                    if(validate()) {
-
-
-                        // Write a message to the database
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("PastorRegistration");
-
-                        myRef.setValue(surname);
-                        myRef.setValue(firstname);
-                        myRef.setValue(othername);
-                        myRef.setValue(email);
-                        myRef.setValue(residential);
-                        myRef.setValue(phone);
-                    }else {
 
                     }
-                }
+
             });
             showMenu = findViewById(R.id.show_dropdown_menu);
             showMenu.setOnClickListener(new View.OnClickListener() {
@@ -156,17 +154,19 @@ import java.util.regex.Pattern;
             etfirstname = findViewById(R.id.etFirstname);
             etothername = findViewById(R.id.etOthername);
             etemail = findViewById(R.id.etEmail);
+            etpassword = findViewById(R.id.etPassword);
             etresidential = findViewById(R.id.etResidential);
             etphone = findViewById(R.id.etPhone);
         }
 
-        private boolean validate() {
+        private void validate() {
             //here we typecast which means getting the Text of the user,converting to String
             // and trimming off the white spaces
             surname = etsurname.getText().toString().trim();
             firstname = etfirstname.getText().toString().trim();
             othername = etothername.getText().toString().trim();
             email = etemail.getText().toString().trim();
+            password = etpassword.getText().toString().trim();
             residential = etresidential.getText().toString().trim();
             phone = etphone.getText().toString().trim();
 
@@ -177,7 +177,7 @@ import java.util.regex.Pattern;
                 if (surname.isEmpty()) {
                     etsurname.setError("This field cannot be empty");
                 }
-                return false;
+                return;
             }
 
             if (Pattern.matches("[0-9]+", firstname)) {
@@ -185,7 +185,7 @@ import java.util.regex.Pattern;
                 if (firstname.isEmpty()) {
                     etfirstname.setError("this field cannot be empty");
                 }
-                return false;
+                return;
             }
 
             if (Pattern.matches("[0-9]+", othername)) {
@@ -193,12 +193,16 @@ import java.util.regex.Pattern;
                 if (othername.isEmpty()) {
                     etothername.setError("this field cannot be empty");
                 }
-                return false;
+                return;
             }
 
             if (email.isEmpty()) {
                 etemail.setError("Input your email address, please");
-                return false;
+                return;
+            }
+            if(password.isEmpty() || password.length() < 6){
+                etpassword.setError("Please input your password");
+                return;
             }
 
             if (Pattern.matches("[0-9]+", residential)) {
@@ -206,18 +210,44 @@ import java.util.regex.Pattern;
                 if (residential.isEmpty()) {
                     etresidential.setError("this field cannot be empty");
                 }
-                return false;
+                return;
             }
 
             if (!Pattern.matches("[0-9]+", phone) || phone.length() != 11) {
                 etphone.setError("Please enter a valid phone number");
-                return false;
+                return;
             } else {
-                Toast.makeText(this, "You have successfully filled your form",
-                        Toast.LENGTH_LONG).show();
-                Toast.makeText(this, "sending to database...",
-                        Toast.LENGTH_LONG).show();
-                return true;
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(PastorRegistration.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText(PastorRegistration.this,
+                                        "createUserWithEmail:onComplete" + task.isSuccessful(), Toast.LENGTH_LONG).show();
+                                if(!task.isSuccessful()){
+                                    Toast.makeText(PastorRegistration.this,
+                                            "Authentication faild." + task.getException(), Toast.LENGTH_SHORT ).show();
+                                }else{
+                                    FirebaseDatabase database =  FirebaseDatabase.getInstance();
+                                    DatabaseReference mRef =  database.getReference().child("Users").push();
+                                    FirebaseUser user =  firebaseAuth.getCurrentUser();
+                                    String userId = user.getUid();
+                                    mRef.child(firstname).child("sur-name").setValue(surname);
+                                    mRef.child(firstname).child("first name").setValue(firstname);
+                                    mRef.child(firstname).child("other name").setValue(othername);
+                                    mRef.child(firstname).child("email").setValue(email);
+                                    mRef.child(firstname).child("password").setValue(password);
+                                    mRef.child(firstname).child("phone").setValue(phone);
+                                    mRef.child(firstname).child("firstname").setValue(residential);
+                                    mRef.child(firstname).child("userId").setValue(userId);
+                                    Intent intent = new Intent(PastorRegistration.this, PastorLoginPage.class);
+                                    startActivity(intent);
+                                    finish();
+
+                                }
+                            }
+                        });
+
+                return;
 
             }
 

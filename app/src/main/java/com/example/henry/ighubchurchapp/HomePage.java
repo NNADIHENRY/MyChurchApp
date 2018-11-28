@@ -19,16 +19,36 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.henry.ighubchurchapp.notespad.NotesPad;
+import com.example.henry.ighubchurchapp.video.VideoAppMainActivity;
+
 public class HomePage extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
 
     Button showMenu;
-    ImageButton login, register, pastor, tithe, about, help, weeklyactivity, video;
+    ImageButton login, register, pastor, tithe, about, help, weeklyactivity, video, note, livevideo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         TableLayout tv =  this.findViewById(R.id.table);
        // Set focus to the textview
+        livevideo = findViewById(R.id.btnvideo);
+        livevideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, VideoAppMainActivity.class));
+
+            }
+        });
+
+        note = findViewById(R.id.btnnote);
+        note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent notes = new Intent(HomePage.this, NotesPad.class);
+                startActivity(notes);
+            }
+        });
         tithe = findViewById(R.id.btnTithe);
         tithe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +173,10 @@ public class HomePage extends AppCompatActivity implements MenuItem.OnMenuItemCl
                             me = true;
                         }else if(menuItem.getTitle().toString().matches("About Us") ) {
                             about();
+                            me = true;
+                        }else if(menuItem.getTitle().toString().matches("Take Note")){
+                            Intent notes = new Intent(HomePage.this, NotesPad.class);
+                            startActivity(notes);
                             me = true;
                         }
                         else {

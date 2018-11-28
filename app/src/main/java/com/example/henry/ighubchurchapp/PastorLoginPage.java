@@ -1,6 +1,7 @@
 package com.example.henry.ighubchurchapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class PastorLoginPage extends AppCompatActivity {
     private EditText etEmail, etPassword;
-    private Button btnSubmit, btnSignUp;
+    private Button btnSubmit, btnSignUp, btnForgotten;
+    private FirebaseAuth firebaseAuth;
 
     private String email, password;
 
@@ -20,15 +27,18 @@ public class PastorLoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_login_page);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnSignUp = findViewById(R.id.btnSignUp);
+        btnForgotten = findViewById(R.id.btnForgotten);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnForgotten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate();
+                startActivity(new Intent(PastorLoginPage.this, MainActivity.class));
             }
         });
 
@@ -37,6 +47,13 @@ public class PastorLoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(new Intent(PastorLoginPage.this,
                         PastorRegistration.class) ));
+            }
+        });
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate();
             }
         });
 
@@ -54,8 +71,24 @@ public class PastorLoginPage extends AppCompatActivity {
         if (password.isEmpty()) {
             etPassword.setError("Incorrect Password");
         } else{
-            Toast.makeText(this, "Welcome to your page", Toast.LENGTH_LONG).show();
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(PastorLoginPage.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Toast.makeText(PastorLoginPage.this,
+                                    "pastors login " + task.isSuccessful(), Toast.LENGTH_LONG).show();
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(PastorLoginPage.this,
+                                        "Authentication faild." + task.getException(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Intent intent = new Intent(PastorLoginPage.this, ProfileActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    });
+        }
         }
     }
-}
+
 

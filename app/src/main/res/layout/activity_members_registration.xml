@@ -21,25 +21,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/show_dropdown_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#059636"
-            android:text="..."
-            android:layout_marginTop="5dp"
-            android:textColor="#fff"
-            android:layout_marginEnd="44dp"/>
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:src="@drawable/ighubchurch"
-            android:layout_marginTop="5dp"
+
             />
 
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/show_dropdown_menu"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/menu"
+
+            android:textColor="#fff"
+            android:layout_marginEnd="70dp"/>
     </LinearLayout>
 
     <TextView
@@ -248,6 +255,28 @@
             android:layout_height="wrap_content"
             android:textColor="#000"
             android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="password"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:inputType="textPassword"
             android:textSize="20sp"
             />
     </LinearLayout>

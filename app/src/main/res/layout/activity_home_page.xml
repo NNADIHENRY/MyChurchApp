@@ -14,7 +14,7 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:layout_gravity="center"
     tools:context="com.example.henry.ighubchurchapp.HomePage"
     android:gravity="center">
@@ -41,7 +41,7 @@
                 android:id="@+id/show_dropdown_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#059636"
+                android:background="@drawable/menu"
                 android:onClick="showDropDownMenu"
                 android:text="..."
                 android:textColor="#fff" />
@@ -152,6 +152,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 >
                 <ImageButton
                     android:layout_width="0dp"
@@ -198,6 +199,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 >
 
                 <ImageButton
@@ -207,7 +209,7 @@
                     android:layout_gravity="center"
                     android:layout_height="match_parent"
                     android:src="@drawable/weeklyactivity"
-                    android:onClick="showTabl"/>
+                    android:layout_marginRight="10dp"/>
                 <ImageButton
                     android:id="@+id/btnVideoStreeming"
                     android:layout_width="0dp"
@@ -215,23 +217,89 @@
                     android:layout_gravity="center"
                     android:layout_height="match_parent"
                     android:src="@drawable/weeklyactivity"
-                    android:onClick="showTabl"/>
+                    android:layout_marginLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
                 <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="@string/weeklyact"
+                    android:text="Weekly Activity"
+                    style="@style/naming"
+                    android:layout_marginRight="10dp"
                     />
                 <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="Watch Videos"
+                    style="@style/naming"
                     />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <ImageButton
+                    android:id="@+id/btnnote"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/note"
+                    android:layout_marginRight="10dp"/>
+                <ImageButton
+                    android:id="@+id/btnvideo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/video"
+                    android:onClick="showTabl"/>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Take Note"
+                    style="@style/naming"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Video Live"
+                    style="@style/naming"/>
+
+
             </LinearLayout>
 
         </LinearLayout>
